@@ -10,6 +10,13 @@ class LinkedListTest < Minitest::Test
     assert_instance_of LinkedList, list
   end
 
+  def test_head
+    list = LinkedList.new
+    assert_equal nil, list.head
+  end
+  
+
+
 
 
   # def test_surname
