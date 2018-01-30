@@ -14,7 +14,11 @@ class LinkedListTest < Minitest::Test
     list = LinkedList.new
     assert_equal nil, list.head
   end
-  
+  def test_list_append
+    list = LinkedList.new
+    assert_instance_of Node, list.append("West")
+  end
+
 
 
 
