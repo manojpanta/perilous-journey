@@ -31,7 +31,7 @@ attr_reader :head, :count
 
 
   def to_string
-    sentence =  "The #{@head.surname} Family"
+    sentence =  "The #{@head.surname} family"
     current = @head
     if @head.nil?
        nil
