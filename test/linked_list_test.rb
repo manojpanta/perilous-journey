@@ -100,6 +100,11 @@ class LinkedListTest < Minitest::Test
     assert_equal "The Brooks family",list.to_string
   end
 
+  def test_append_again_again
+    list = LinkedList.new
+    list.append("Henderson")
+    assert_equal "Henderson", list.head.surname
+  end
 
 
 
