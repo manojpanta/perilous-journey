@@ -15,29 +15,37 @@ attr_reader :head, :count
   # # end
   # #
   def append(surname)
+    current = @head
     if @head.nil?
-      @head = Node.new(surname)
-      @count += 1
+       @head = Node.new(surname)
+       @count += 1
     else
-    end
+       until  current.next_node.nil?
+         current = current.next_node
+       end
+       current.next_node = Node.new (surname)
+       @count += 1
+     end
   end
 
 
 
   def to_string
-     "The #{@head.surname} Family"
-
-
+    sentence =  "The #{@head.surname} Family"
+    current = @head
+    if @head.nil?
+       nil
+     elsif @head.next_node.nil?
+       sentence
+     else
+       until  current.next_node.nil?
+         current = current.next_node
+         sentence.concat(", followed by the #{ current.surname} family")
+      end
+      sentence
+    end
   end
 
-  #   def to_string
-  #
-  # end
-  #
-  # # def next_node
-  #   LinkedList.new = Node.new
-  # #   # LinkedList.new(head)
-  # end
 
 
 

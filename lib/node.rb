@@ -1,8 +1,9 @@
 class Node
 
-  attr_reader :surname,
-              :next_node
-
+  attr_reader :surname
+              
+#
+  attr_accessor :next_node
 
 
  def initialize(surname)
@@ -11,7 +12,9 @@ class Node
 
  end
 
-  def student
-    student = Student.new("berke")
-  end
+  # def node
+  #   node = Node.new("berke")
+  # end
+
+
 end
