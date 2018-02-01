@@ -121,10 +121,40 @@ class LinkedListTest < Minitest::Test
     list.append("Henderson")
     list.prepend("McKinney")
     result = "The McKinney family, followed by the Brooks family, followed by the Henderson family"
-    require 'pry';binding.pry
     assert_equal result, list.to_string
 
   end
+
+  def test_if_the_count_is_3_now
+    list = LinkedList.new
+    list.append("Brooks")
+    list.append("Henderson")
+    list.prepend("McKinney")
+    # require 'pry';binding.pry
+    assert_equal 3,list.count
+  end
+
+  def test_if_the_count_is_3_now
+    list = LinkedList.new
+    list.append("Brooks")
+    list.append("Henderson")
+    list.prepend("McKinney")
+    list.insert(2,"Lawson")
+    # require 'pry';binding.pry
+    assert_equal "Lawson", list.head.next_node.next_node.surname
+  end
+
+  def test_if_test_worked_now
+    list = LinkedList.new
+    list.append("Brooks")
+    list.append("Henderson")
+    list.prepend("McKinney")
+    list.insert(1,"Lawson")
+    result2 ="The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Henderson family"
+    assert_equal result2, list.to_string
+  end
+
+
 
 
 
