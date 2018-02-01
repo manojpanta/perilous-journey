@@ -36,7 +36,7 @@ class LinkedListTest < Minitest::Test
     list.append ("West")
 
     # require 'pry';binding.pry
-    assert_equal "The West Family", list.to_string
+    assert_equal "The West family", list.to_string
   end
   #
 
@@ -87,6 +87,21 @@ class LinkedListTest < Minitest::Test
     # require 'pry';binding.pry
     assert_equal "The Rhodes family, followed by the Hardy family, followed by the manoj family", list.to_string
   end
+
+  def test_append_again
+    list = LinkedList.new
+    list.append("Brooks")
+    assert_equal "Brooks", list.head.surname
+  end
+
+  def test_if_string_works_again
+    list = LinkedList.new
+    list.append("Brooks")
+    assert_equal "The Brooks family",list.to_string
+  end
+
+
+
 
 
 
