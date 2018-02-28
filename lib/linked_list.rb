@@ -11,10 +11,6 @@ attr_reader :head, :count
     @head = nil
     @count = 0
   end
-  # # def head
-  # #
-  # # end
-  # #
   def append(surname)
     current = @head
       if @head.nil?
@@ -55,31 +51,25 @@ attr_reader :head, :count
     @head.next_node = old_head
   end
 
-  def insert(position, surname, current_position = 0, current_node = nil)
+  def insert(position, surname)
     # binding.pry
-    if current_node == nil
-      current_node = @head
-      # binding.pry
-    end
-    if current_position == position - 1
-      new_node = Node.new(surname)
-      new_node.next_node = current_node.next_node
-      current_node.next_node = new_node
+    current = @head
+    count = 0
+    if current.nil?
+      @head = Node.new(surname)
     else
-      current_position += 1
-      insert(position, surname, current_position, current_node.next_node)
+      until count == position -1
+        current = current.next_node
+        count +=1
+      end
+      new_node = Node.new(surname)
+      new_node.next_node = current.next_node
+      current.next_node = new_node
     end
-  end
-
-
-# binding.pry
 
 
 
 
-
-
-
-
-
-end
+    end
+  end     # binding.pry
+  # u
